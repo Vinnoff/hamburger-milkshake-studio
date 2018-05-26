@@ -22,7 +22,7 @@ export class LaunchListPage {
   constructor(private navCtrl: NavController, 
     private navParams: NavParams,
     private spaceXService: SpaceXApiProvider) {
-      this.spaceXService.getAllLauches().subscribe(data => {
+      this.spaceXService.getAllLaunches().subscribe(data => {
         this.launches = data;
       });
   }
