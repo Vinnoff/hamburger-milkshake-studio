@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Launch } from '../../models/Launch';
+import { Launch } from '../../models/launchs/Launch';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 
 /**
