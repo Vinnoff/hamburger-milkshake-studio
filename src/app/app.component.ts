@@ -7,6 +7,7 @@ import { HomepagePage } from '../pages/homepage/homepage';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { SearchPage } from '../pages/search/search';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
+import { AboutPage } from '../pages/about/about';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +28,8 @@ export class MyApp {
       { title: 'Launches', component: LaunchListPage },
       { title: 'About', component: HomepagePage },
       { title: 'Search', component: SearchPage },
-      { title: 'Rockets', component: RocketListPage }
+      { title: 'Rockets', component: RocketListPage },
+      { title: 'About', component: AboutPage }
     ];
 
   }

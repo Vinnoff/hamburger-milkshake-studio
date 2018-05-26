@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LaunchDetailPage } from '../pages/launch-detail/launch-detail';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
+import { AboutPage } from '../pages/about/about';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,6 +25,7 @@ import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
     LaunchDetailPage,
     RocketListPage,
     RocketDetailPage,
+    AboutPage
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
     LaunchDetailPage,
     RocketListPage,
     RocketDetailPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
