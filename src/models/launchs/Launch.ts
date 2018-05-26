@@ -1,6 +1,6 @@
 import { Link } from "./Link";
 import { LaunchSite } from "./LaunchSite";
-import { Rocket } from "./rockets/Rocket";
+import { Rocket } from "../rockets/Rocket";
 import { Telemetry } from "./Telemetry";
 import { Reuse } from "./Reuse";
 
