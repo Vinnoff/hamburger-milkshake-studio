@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomepagePage } from '../pages/homepage/homepage';
+import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,18 +16,22 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomepagePage,
-    LaunchListPage
+    LaunchListPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    HttpClientModule
+    IonicModule.forRoot(MyApp, {
+      tabsPlacement: 'bottom',
+    }),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomepagePage,
-    LaunchListPage
+    LaunchListPage,
+    SearchPage
   ],
   providers: [
     StatusBar,
