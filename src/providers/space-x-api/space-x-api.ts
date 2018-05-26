@@ -13,15 +13,17 @@ import { Launch } from '../../models/Launch';
 export class SpaceXApiProvider {
 
   private baseUrl = "https://api.spacexdata.com/v2"
-  private endPointSpaceXCompanyInfo = "/info"
-  private endPointLaunches = "/launches/all"
 
   constructor(public http: HttpClient) {
     console.log('Hello SpacexServiceProvider Provider');
   }
   
-  getAllLauches() : Observable<Launch[]>{
-    return this.http.get<Launch[]>(this.baseUrl + this.endPointLaunches)
+  getAllLaunches() : Observable<Launch[]>{
+    return this.http.get<Launch[]>(this.baseUrl + "/launches/all")
+  }
+
+  getNextLaunches() : Observable<Launch[]>{
+    return this.http.get<Launch[]>(this.baseUrl + "/launches/upcoming")
   }
 
 }
