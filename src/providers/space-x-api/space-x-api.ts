@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Launch } from '../../models/Launch';
+import { Launch } from '../../models/launchs/Launch';
 
 /*
   Generated class for the SpaceXApiProvider provider.

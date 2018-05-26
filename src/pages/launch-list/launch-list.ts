@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
-import { Launch } from '../../models/Launch';
+import { Launch } from '../../models/launchs/Launch';
 
 /**
  * Generated class for the LaunchListPage page.
