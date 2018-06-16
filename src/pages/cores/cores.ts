@@ -19,8 +19,9 @@ import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 export class CoresPage {
 
   cores : CoreDetails[];
-  constructor(private navParams: NavParams,
-  private spaceXService: SpaceXApiProvider) {
+  constructor(private navCtrl: NavController, 
+    private navParams: NavParams,
+    private spaceXService: SpaceXApiProvider) {
     this.spaceXService.getAllCores().subscribe(data => {
       this.cores = data;
     });
@@ -29,5 +30,7 @@ export class CoresPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoresPage');
   }
-
+  openCapsuleDetail(core: CoreDetails) {
+    //this.navCtrl.push(CoreDetailPage, {data: core});
+  }
 }
