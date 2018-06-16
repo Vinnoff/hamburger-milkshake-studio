@@ -10,13 +10,10 @@ import { SpaceXApiProvider } from '../providers/space-x-api/space-x-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { HttpClientModule } from '@angular/common/http';
 import { LaunchDetailPage } from '../pages/launch-detail/launch-detail';
-import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
-import { AboutUsPage } from '../pages/about-us/about-us';
-import { AboutCompanyPage } from '../pages/about-company/about-company';
-import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
+import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
 
 @NgModule({
   declarations: [
@@ -24,13 +21,10 @@ import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
     HomepagePage,
     LaunchListPage,
     SearchPage,
-    LaunchDetailPage,
-    RocketListPage,
-    RocketDetailPage,
+    EquipmentTabsPage,
     AboutTabsPage,
-    AboutUsPage,
-    AboutCompanyPage,
-    CapsuleListPage,
+    LaunchDetailPage,
+    RocketDetailPage,
     CapsuleDetailPage,
   ],
   imports: [
@@ -46,13 +40,10 @@ import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
     HomepagePage,
     LaunchListPage,
     SearchPage,
-    LaunchDetailPage,
-    RocketListPage,
-    RocketDetailPage,
+    EquipmentTabsPage,
     AboutTabsPage,
-    AboutUsPage,
-    AboutCompanyPage,
-    CapsuleListPage,
+    LaunchDetailPage,
+    RocketDetailPage,
     CapsuleDetailPage,
   ],
   providers: [

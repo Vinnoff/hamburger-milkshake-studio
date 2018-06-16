@@ -5,10 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomepagePage } from '../pages/homepage/homepage';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { SearchPage } from '../pages/search/search';
-import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
-import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
-import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
+import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
 
 
 @Component({
@@ -29,10 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomepagePage },
       { title: 'Launches', component: LaunchListPage },
       { title: 'Search', component: SearchPage },
-      { title: 'Rockets', component: RocketListPage },
-      { title: 'Capsules', component: CapsuleListPage },
-      { title: 'About', component: AboutTabsPage },
-      { title: 'LaunchePad', component: LaunchpadListPage}
+      { title: 'Equipment', component: EquipmentTabsPage},
+      { title: 'About', component: AboutTabsPage }
     ];
 
   }
