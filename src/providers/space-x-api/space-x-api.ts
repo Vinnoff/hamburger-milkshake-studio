@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Launch } from '../../models/launchs/Launch';
+import { Rocket } from '../../models/rockets/Rocket';
 
 /*
   Generated class for the SpaceXApiProvider provider.
@@ -24,6 +25,10 @@ export class SpaceXApiProvider {
 
   getNextLaunches() : Observable<Launch[]>{
     return this.http.get<Launch[]>(this.baseUrl + "/launches/upcoming")
+  }
+
+  getAllRockets() : Observable<Rocket[]>{
+    return this.http.get<Rocket[]>(this.baseUrl + "/rockets")
   }
 
 }
