@@ -3,6 +3,7 @@ import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CoreDetails } from '../../models/CoreDetails';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
+import { CoreDetailsPage } from '../core-details/core-details';
 
 /**
  * Generated class for the CoresPage page.
@@ -30,7 +31,7 @@ export class CoresPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoresPage');
   }
-  openCapsuleDetail(core: CoreDetails) {
-    //this.navCtrl.push(CoreDetailPage, {data: core});
+  openCoreDetails(core: CoreDetails) {
+    this.navCtrl.push(CoreDetailsPage, {data: core});
   }
 }
