@@ -11,13 +11,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SpaceXApiProvider } from '../providers/space-x-api/space-x-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { HttpClientModule } from '@angular/common/http';
+import { LaunchDetailPage } from '../pages/launch-detail/launch-detail';
 
 @NgModule({
   declarations: [
     MyApp,
     HomepagePage,
     LaunchListPage,
-    SearchPage
+    SearchPage,
+    LaunchDetailPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomepagePage,
     LaunchListPage,
-    SearchPage
+    SearchPage,
+    LaunchDetailPage
   ],
   providers: [
     StatusBar,

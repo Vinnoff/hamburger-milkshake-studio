@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Launch } from '../../models/launchs/Launch';
 
 /**
  * Generated class for the LaunchDetailPage page.
@@ -15,11 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LaunchDetailPage {
 
+  launch: Launch;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.launch = this.navParams.get('data');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchDetailPage');
+    console.log(this.launch.mission_name);
   }
-
 }
