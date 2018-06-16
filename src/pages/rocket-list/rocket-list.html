@@ -15,8 +15,7 @@
 
 <ion-content padding>
     <ion-list>
-      <button ion-item *ngFor = "let rocket of rockets">
-        
+      <button ion-item *ngFor = "let rocket of rockets" (click)="openRocketDetail(rocket)">
         {{ rocket.name }} <br />
         <p>{{ rocket.country}}</p>
       </button>

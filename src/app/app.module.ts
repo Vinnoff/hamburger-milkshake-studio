@@ -12,6 +12,7 @@ import { SpaceXApiProvider } from '../providers/space-x-api/space-x-api';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { HttpClientModule } from '@angular/common/http';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
+import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RocketListPage } from '../pages/rocket-list/rocket-list';
     LaunchListPage,
     SearchPage,
     RocketListPage,
+    RocketDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { RocketListPage } from '../pages/rocket-list/rocket-list';
     LaunchListPage,
     SearchPage,
     RocketListPage,
+    RocketDetailPage,
   ],
   providers: [
     StatusBar,
