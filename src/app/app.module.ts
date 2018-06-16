@@ -16,6 +16,7 @@ import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 import { AboutUsPage } from '../pages/about-us/about-us';
 import { AboutCompanyPage } from '../pages/about-company/about-company';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
+import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
     AboutUsPage,
     AboutCompanyPage,
     CapsuleListPage,
+    CapsuleDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
     AboutUsPage,
     AboutCompanyPage,
     CapsuleListPage,
+    CapsuleDetailPage,
   ],
   providers: [
     StatusBar,

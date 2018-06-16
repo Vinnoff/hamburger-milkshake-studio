@@ -1,0 +1,69 @@
+<!--
+  Generated template for the CapsuleDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{capsule.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content>
+          <p>
+            <b>Name: </b> {{capsule.name}}  <br />
+            <b>ID: </b> {{capsule.id}} <br/>
+            <b>Type: </b> {{capsule.type}}<br/>
+            <b>Orbit duration: </b> {{capsule.orbit_duration_yr}} year(s)<br/>
+          </p>
+        </ion-card-content>
+      </ion-card>
+  
+      <ion-card>
+          <ion-card-content *ngFor = "let thruster of capsule.thrusters">
+            <b>Thrusters</b>
+            <p>
+              <b>Type: </b>  {{thruster.type}}<br />
+              <b>Pods: </b>  {{thruster.pods}}<br />
+              <b>Fuel 1: </b>  {{thruster.fuel_1}}<br />
+              <b>Fuel 2: </b>  {{thruster.fuel_2}}<br />
+            </p>
+          </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+          <ion-card-content>
+            <b>Heat Shield</b>
+            <p>
+              <b>Material: </b> {{capsule.heat_shield.material}}  <br />
+              <b>Partner: </b> {{capsule.heat_shield.dev_partner}}  <br />
+            </p>
+          </ion-card-content>
+      </ion-card>
+  
+      <ion-card>
+          <ion-card-content>
+            <b>Diameter</b>
+            <p>
+              <b>Meter: </b> {{capsule.diameter.meters}}  <br />
+              <b>Feet: </b> {{capsule.diameter.feet}} <br/>
+            </p>
+          </ion-card-content>
+      </ion-card>
+  
+      <ion-card>
+          <ion-card-content>
+            <b>Launch payload mass</b>
+            <p>
+              <b>kg: </b> {{capsule.launch_payload_mass.kg}}  <br />
+              <b>lb: </b> {{capsule.launch_payload_mass.lb}} <br/>
+            </p>
+          </ion-card-content>
+      </ion-card>
+</ion-content>

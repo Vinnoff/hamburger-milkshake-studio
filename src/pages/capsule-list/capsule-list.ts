@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Capsule } from '../../models/capsule/Capsule';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
+import { CapsuleDetailPage } from '../capsule-detail/capsule-detail';
 
 /**
  * Generated class for the CapsuleListPage page.
@@ -32,7 +33,7 @@ export class CapsuleListPage {
   }
 
   openCapsuleDetail(capsule: Capsule) {
-    //this.navCtrl.push(CapsuleD, {data: capsule});
+    this.navCtrl.push(CapsuleDetailPage, {data: capsule});
   }
 
 }
