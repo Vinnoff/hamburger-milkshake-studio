@@ -2,12 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomepagePage } from '../pages/homepage/homepage';
-import { LaunchListPage } from '../pages/launch-list/launch-list';
-import { SearchPage } from '../pages/search/search';
-import { RocketListPage } from '../pages/rocket-list/rocket-list';
-import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 
+import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
+import { LaunchListPage } from '../pages/launch-list/launch-list';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +13,7 @@ import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomepagePage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,11 +22,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomepagePage },
-      { title: 'Launches', component: LaunchListPage },
-      { title: 'Search', component: SearchPage },
-      { title: 'Rockets', component: RocketListPage },
-      { title: 'About', component: AboutTabsPage }
+      { title: 'Home', component: HomePage },
+      { title: 'List', component: ListPage },
+      { title: 'Launches', component: LaunchListPage }
     ];
 
   }
