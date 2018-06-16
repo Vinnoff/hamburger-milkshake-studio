@@ -17,6 +17,8 @@ import { AboutUsPage } from '../pages/about-us/about-us';
 import { AboutCompanyPage } from '../pages/about-company/about-company';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
+import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail';
+import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
     AboutCompanyPage,
     CapsuleListPage,
     CapsuleDetailPage,
+    LaunchpadDetailPage,
+    LaunchpadListPage
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,8 @@ import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
     AboutCompanyPage,
     CapsuleListPage,
     CapsuleDetailPage,
+    LaunchpadDetailPage,
+    LaunchpadListPage
   ],
   providers: [
     StatusBar,

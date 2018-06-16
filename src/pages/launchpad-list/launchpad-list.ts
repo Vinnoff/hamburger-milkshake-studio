@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Launchpads } from '../../models/launchpads/Launchpads';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
+import { LaunchpadDetailPage } from '../launchpad-detail/launchpad-detail';
 
 /**
  * Generated class for the LaunchpadListPage page.
@@ -32,8 +33,7 @@ export class LaunchpadListPage {
   }
 
   openLaunchpadDetail(launchpad: Launchpads) {
-    //Pour detail apres
-    //this.navCtrl.push(LaunchpadDetailPage, {data: launchpad});
+    this.navCtrl.push(LaunchpadDetailPage, {data: launchpad});
   }
 
 }

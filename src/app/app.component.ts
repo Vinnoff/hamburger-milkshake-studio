@@ -31,8 +31,8 @@ export class MyApp {
       { title: 'Search', component: SearchPage },
       { title: 'Rockets', component: RocketListPage },
       { title: 'Capsules', component: CapsuleListPage },
-      { title: 'About', component: AboutTabsPage },
-      { title: 'LaunchePad', component: LaunchpadListPage}
+      { title: 'LaunchePad', component: LaunchpadListPage},
+      { title: 'About', component: AboutTabsPage }
     ];
 
   }
