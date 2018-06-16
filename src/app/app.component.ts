@@ -2,11 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomepagePage } from '../pages/homepage/homepage';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { SearchPage } from '../pages/search/search';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
+import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -25,9 +26,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomepagePage },
       { title: 'Launches', component: LaunchListPage },
-      { title: 'About', component: HomepagePage },
       { title: 'Search', component: SearchPage },
-      { title: 'Rockets', component: RocketListPage }
+      { title: 'Rockets', component: RocketListPage },
+      { title: 'About', component: AboutTabsPage }
     ];
 
   }

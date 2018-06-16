@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Launch } from '../../models/launchs/Launch';
 import { Rocket } from '../../models/rockets/Rocket';
+import { CompanyInfo } from '../../models/company/CompanyInfo';
 
 /*
   Generated class for the SpaceXApiProvider provider.
@@ -12,7 +13,6 @@ import { Rocket } from '../../models/rockets/Rocket';
 */
 @Injectable()
 export class SpaceXApiProvider {
-
   private baseUrl = "https://api.spacexdata.com/v2"
 
   constructor(public http: HttpClient) {
@@ -31,4 +31,7 @@ export class SpaceXApiProvider {
     return this.http.get<Rocket[]>(this.baseUrl + "/rockets")
   }
 
+  getSpaceXInfo() : Observable<CompanyInfo>{
+    return this.http.get<CompanyInfo>(this.baseUrl + "/info")
+  }
 }
