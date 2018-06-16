@@ -15,6 +15,7 @@ import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 import { AboutUsPage } from '../pages/about-us/about-us';
 import { AboutCompanyPage } from '../pages/about-company/about-company';
+import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AboutCompanyPage } from '../pages/about-company/about-company';
     RocketDetailPage,
     AboutTabsPage,
     AboutUsPage,
-    AboutCompanyPage
+    AboutCompanyPage,
+    CapsuleListPage,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { AboutCompanyPage } from '../pages/about-company/about-company';
     RocketDetailPage,
     AboutTabsPage,
     AboutUsPage,
-    AboutCompanyPage
+    AboutCompanyPage,
+    CapsuleListPage,
   ],
   providers: [
     StatusBar,
