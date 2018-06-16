@@ -34,5 +34,4 @@ export class SpaceXApiProvider {
   getSpaceXInfo() : Observable<CompanyInfo>{
     return this.http.get<CompanyInfo>(this.baseUrl + "/info")
   }
-
 }
