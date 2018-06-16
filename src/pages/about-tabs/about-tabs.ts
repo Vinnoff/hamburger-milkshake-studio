@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AboutCompanyPage } from '../about-company/about-company';
-import { AboutUsPage } from '../about-us/about-us';
+import { IonicPage, NavController } from 'ionic-angular';
 
 /**
  * Generated class for the AboutTabsPage page.
@@ -9,16 +8,16 @@ import { AboutUsPage } from '../about-us/about-us';
  * Ionic pages and navigation.
  */
 
-
+@IonicPage()
 @Component({
+  selector: 'page-about-tabs',
   templateUrl: 'about-tabs.html'
 })
 export class AboutTabsPage {
 
-  tab1Root = AboutUsPage;
-  tab2Root = AboutCompanyPage;
+  aboutUsRoot = 'AboutUsPage'
+  aboutCompanyRoot = 'AboutCompanyPage'
+  
+  constructor(public navCtrl: NavController) {}
 
-  constructor() {
-
-  }
 }
