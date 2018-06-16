@@ -8,6 +8,7 @@ import { SearchPage } from '../pages/search/search';
 import { RocketListPage } from '../pages/rocket-list/rocket-list';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
+import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class MyApp {
       { title: 'Search', component: SearchPage },
       { title: 'Rockets', component: RocketListPage },
       { title: 'Capsules', component: CapsuleListPage },
-      { title: 'About', component: AboutTabsPage }
+      { title: 'About', component: AboutTabsPage },
+      { title: 'LaunchePad', component: LaunchpadListPage}
     ];
 
   }
