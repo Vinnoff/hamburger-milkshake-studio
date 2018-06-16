@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
 /**
- * Generated class for the AboutTabsPage page.
+ * Generated class for the EquipmentTabsPage tabs.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,14 +10,17 @@ import { IonicPage, NavController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-about-tabs',
-  templateUrl: 'about-tabs.html'
+  selector: 'page-equipment-tabs',
+  templateUrl: 'equipment-tabs.html'
 })
-export class AboutTabsPage {
+export class EquipmentTabsPage {
 
-  aboutUsRoot = 'AboutUsPage'
-  aboutCompanyRoot = 'AboutCompanyPage'
-  
+  rocketsRoot = 'RocketsPage'
+  capsulesRoot = 'CapsulesPage'
+  coresRoot = 'CoresPage'
+  launchpadsRoot = 'LaunchpadsPage'
+
+
   constructor(public navCtrl: NavController) {}
 
 }
