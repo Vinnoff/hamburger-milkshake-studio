@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Launch } from '../../models/launchs/Launch';
 import { Rocket } from '../../models/rockets/Rocket';
 import { CompanyInfo } from '../../models/company/CompanyInfo';
+import { Capsule } from '../../models/capsule/Capsule';
 
 /*
   Generated class for the SpaceXApiProvider provider.
@@ -33,5 +34,9 @@ export class SpaceXApiProvider {
 
   getSpaceXInfo() : Observable<CompanyInfo>{
     return this.http.get<CompanyInfo>(this.baseUrl + "/info")
+  }
+
+  getAllCapsules() : Observable<Capsule[]>{
+    return this.http.get<Capsule[]>(this.baseUrl + "/capsules")
   }
 }

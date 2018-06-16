@@ -5,11 +5,12 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>All Rockets</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>All Rockets</ion-title>
+      </ion-navbar>
 </ion-header>
 
 
@@ -20,4 +21,4 @@
         <p>{{ rocket.country}}</p>
       </button>
     </ion-list>
-  </ion-content>
+</ion-content>
