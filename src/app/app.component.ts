@@ -28,6 +28,9 @@ export class MyApp {
       { title: 'Launches', component: LaunchListPage },
       { title: 'Search', component: SearchPage },
       { title: 'Equipment', component: EquipmentTabsPage},
+      { title: 'Rockets', component: RocketListPage },
+      { title: 'Capsules', component: CapsuleListPage },
+      { title: 'LaunchePad', component: LaunchpadListPage},
       { title: 'About', component: AboutTabsPage }
     ];
 
