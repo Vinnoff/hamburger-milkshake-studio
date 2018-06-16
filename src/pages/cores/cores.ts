@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CoreDetails } from '../../models/CoreDetails';
+import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 
 /**
  * Generated class for the CoresPage page.
@@ -15,7 +18,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CoresPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cores : CoreDetails[];
+  constructor(private navParams: NavParams,
+  private spaceXService: SpaceXApiProvider) {
+    this.spaceXService.getAllCores().subscribe(data => {
+      this.cores = data;
+    });
   }
 
   ionViewDidLoad() {
