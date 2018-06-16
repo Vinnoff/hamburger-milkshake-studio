@@ -5,6 +5,7 @@ import { Launch } from '../../models/launchs/Launch';
 import { Rocket } from '../../models/rockets/Rocket';
 import { CompanyInfo } from '../../models/company/CompanyInfo';
 import { Capsule } from '../../models/capsule/Capsule';
+import { Launchpads } from '../../models/launchpads/Launchpads';
 
 /*
   Generated class for the SpaceXApiProvider provider.
@@ -38,5 +39,9 @@ export class SpaceXApiProvider {
 
   getAllCapsules() : Observable<Capsule[]>{
     return this.http.get<Capsule[]>(this.baseUrl + "/capsules")
+  }
+
+  getAllLaunchpads() : Observable<Launchpads[]>{
+    return this.http.get<Launchpads[]>(this.baseUrl + "/launchpads")
   }
 }
