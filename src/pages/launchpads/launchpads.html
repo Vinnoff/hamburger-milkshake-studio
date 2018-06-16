@@ -5,14 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Launchpads</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>All Launchpads</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content padding>
+      <ion-list>
+        <button ion-item *ngFor = "let launchpad of launchpads" (click)="openLaunchpadDetail(rocket)">
+          {{ launchpad.full_name }} <br />
+          <p>ID: {{ launchpad.id}}</p>
+        </button>
+      </ion-list>
+  </ion-content>
+  
