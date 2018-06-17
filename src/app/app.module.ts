@@ -14,6 +14,7 @@ import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
 import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
+import { CoreDetailsPage } from '../pages/core-details/core-details';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
     LaunchDetailPage,
     RocketDetailPage,
     CapsuleDetailPage,
+    CoreDetailsPage,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
     LaunchDetailPage,
     RocketDetailPage,
     CapsuleDetailPage,
+    CoreDetailsPage,
   ],
   providers: [
     StatusBar,

@@ -16,7 +16,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor = "let core of cores" (click)="openCoreDetail(core)">
+    <button ion-item *ngFor = "let core of cores" (click)="openCoreDetails(core)">
         <div float-left>{{ core.core_serial }}</div>
         <div float-right>
           <ion-badge *ngIf="core.status == 'expended'" color ="secondary">{{ core.status }}</ion-badge>
