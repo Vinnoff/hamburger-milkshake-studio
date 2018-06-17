@@ -14,5 +14,27 @@
 
 
 <ion-content padding>
-
+    <ion-title>Details</ion-title>
+    <ion-item>
+      <ion-icon name="home" item-left large></ion-icon>
+      <h2>Return(s) To Launch Site : {{core.rtls_landings}}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="help-buoy" item-left large></ion-icon>
+      <h2>Return(s) To ASDS : {{core.asds_landings}}</h2>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-icon name="heart" item-left large></ion-icon>
+      <h2>State : {{core.status}}</h2>
+      <p><i>{{core.details}}</i></p>  
+    </ion-item>
+    <br/>
+    <ion-list>
+      <ion-title>Missions</ion-title>
+      <button ion-item *ngFor = "let launch of core.missions">
+        <h2>
+          {{ launch }}
+        </h2>
+      </button>
+    </ion-list>
 </ion-content>
