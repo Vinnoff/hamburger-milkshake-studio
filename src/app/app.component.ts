@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomepagePage } from '../pages/homepage/homepage';
 import { LaunchListPage } from '../pages/launch-list/launch-list';
-import { SearchPage } from '../pages/search/search';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
 
@@ -26,12 +25,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomepagePage },
       { title: 'Launches', component: LaunchListPage },
-      { title: 'Search', component: SearchPage },
       { title: 'Equipment', component: EquipmentTabsPage},
-      { title: 'Rockets', component: RocketListPage },
-      { title: 'Capsules', component: CapsuleListPage },
-      { title: 'LaunchePad', component: LaunchpadListPage},
-      { title: 'About', component: AboutTabsPage }
+      { title: 'About', component: AboutTabsPage },
     ];
 
   }
