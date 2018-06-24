@@ -17,7 +17,7 @@
 
 <ion-content padding>
     <ion-list>
-      <button ion-item *ngFor = "let launchpad of launchpads" (click)="openLaunchpadDetail(rocket)">
+      <button ion-item *ngFor = "let launchpad of launchpads" (click)="openLaunchpadDetail(launchpad)">
         {{ launchpad.full_name }} <br />
         <p>ID: {{ launchpad.id}}</p>
       </button>
