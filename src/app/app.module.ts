@@ -17,6 +17,8 @@ import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
 import { CoreDetailsPage } from '../pages/core-details/core-details';
 import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail';
 import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
+import { RocketListPage } from '../pages/rocket-list/rocket-list';
+import { CapsuleListPage } from '../pages/capsule-list/capsule-list';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,10 @@ import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
     RocketDetailPage,
     CapsuleDetailPage,
     LaunchpadDetailPage,
-    LaunchpadListPage
+    LaunchpadListPage,
     CoreDetailsPage,
+    RocketListPage,
+    CapsuleListPage,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,9 @@ import { LaunchpadListPage } from '../pages/launchpad-list/launchpad-list';
     CapsuleDetailPage,
     CoreDetailsPage,
     LaunchpadDetailPage,
-    LaunchpadListPage
+    LaunchpadListPage,
+    RocketListPage,
+    CapsuleListPage,
   ],
   providers: [
     StatusBar,
