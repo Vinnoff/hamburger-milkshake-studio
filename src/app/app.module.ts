@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomepagePage } from '../pages/homepage/homepage';
@@ -56,7 +57,8 @@ import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail'
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SpaceXApiProvider
+    SpaceXApiProvider,
+    InAppBrowser
   ]
 })
 export class AppModule {}
