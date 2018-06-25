@@ -16,9 +16,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="pageView">
   <ion-list>
-    <button ion-item *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
+    <button class="semi-transparent" ion-item *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
       <ion-avatar item-start>
         <img src="{{ launch.links.mission_patch_small }}">
       </ion-avatar>
