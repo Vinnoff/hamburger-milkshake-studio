@@ -14,7 +14,7 @@
 
 
 <ion-content padding class="pageView">
-    <ion-card class="semi-transparent">
+    <ion-card class="cardContent">
         <ion-card-content>
           <p>
             <b>Full Name: </b> {{launchpad.full_name}}  <br />
@@ -23,7 +23,7 @@
         </ion-card-content>
       </ion-card>
   
-      <ion-card class="semi-transparent">
+      <ion-card class="cardContent">
           <ion-card-content>
             <b>Location</b>
             <p>
@@ -33,7 +33,7 @@
           </ion-card-content>
       </ion-card>
   
-      <ion-card class="semi-transparent">
+      <ion-card class="cardContent">
           <ion-card-content *ngFor = "let vehicle of launchpad.vehicles_launched">
             <b>Vehicles Launched</b>
             <p>
@@ -42,7 +42,7 @@
           </ion-card-content>
       </ion-card>
 
-      <ion-card class="semi-transparent">
+      <ion-card class="cardContent">
           <ion-card-content>
             <p>
               {{launchpad.details}} <br/>
