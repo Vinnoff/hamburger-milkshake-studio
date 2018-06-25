@@ -15,7 +15,7 @@
 
 <ion-content padding class="pageView">
     <ion-list>
-      <button class="semi-transparent" ion-item *ngFor = "let capsule of capsules" (click)="openCapsuleDetail(capsule)">
+      <button class="cell" ion-item no-lines *ngFor = "let capsule of capsules" (click)="openCapsuleDetail(capsule)">
         {{ capsule.name }} <br />
         <p>ID: {{ capsule.id}}</p>
       </button>

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Launchpads } from '../../models/launchpads/Launchpads';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 import { LaunchpadDetailPage } from '../launchpad-detail/launchpad-detail';
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the LaunchpadsPage page.
@@ -22,14 +23,23 @@ export class LaunchpadsPage {
 
   constructor(private navCtrl: NavController, 
     private navParams: NavParams,
-    private spaceXService: SpaceXApiProvider) {
-      this.spaceXService.getAllLaunchpads().subscribe(data => {
-        this.launchpads = data;
-      });
+    private spaceXService: SpaceXApiProvider,
+    public loadingCtrl: LoadingController) {
+      
+      
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchpadsPage');
+    let loader = this.loadingCtrl.create({
+      content: 'Chargement...',
+    });
+    loader.present().then(() => {
+      this.spaceXService.getAllLaunchpads().subscribe(data => {
+        this.launchpads = data;
+        loader.dismiss();
+      });
+    });
   }
 
   openLaunchpadDetail(launchpad: Launchpads) {
