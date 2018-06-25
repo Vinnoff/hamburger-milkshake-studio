@@ -13,9 +13,9 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="pageView">
     <ion-list>
-      <button ion-item *ngFor = "let capsule of capsules" (click)="openCapsuleDetail(capsule)">
+      <button class="semi-transparent" ion-item *ngFor = "let capsule of capsules" (click)="openCapsuleDetail(capsule)">
         {{ capsule.name }} <br />
         <p>ID: {{ capsule.id}}</p>
       </button>

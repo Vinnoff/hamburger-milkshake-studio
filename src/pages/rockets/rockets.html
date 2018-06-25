@@ -14,9 +14,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="pageView">
     <ion-list>
-      <button ion-item *ngFor = "let rocket of rockets" (click)="openRocketDetail(rocket)">
+      <button class="semi-transparent" ion-item *ngFor = "let rocket of rockets" (click)="openRocketDetail(rocket)">
         {{ rocket.name }} <br />
         <p>{{ rocket.country}}</p>
       </button>
