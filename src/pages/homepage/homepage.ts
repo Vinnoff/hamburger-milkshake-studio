@@ -34,7 +34,7 @@ export class HomepagePage {
   }
 
   openLink(link : string){
-    const browser = this.inAppBrowser.create(encodeURI(link), '_system', null);
+    this.inAppBrowser.create(encodeURI(link), '_system', null);
   }
 
   openLaunchDetail(launch: Launch) {

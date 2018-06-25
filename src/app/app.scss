@@ -16,7 +16,8 @@
 // automatically applied to the <body> element in the app.
 
 .pageView {
-    background-color: rgb(0, 6, 83)
+    background-color: rgb(0, 6, 83);
+    overflow-y: auto;
 }
 
 .cell {
