@@ -1,0 +1,44 @@
+<!--
+  Generated template for the HomepagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="pageView">
+  <ion-card class="semi-transparent" ion-item no-lines *ngIf = "nextLaunche" (click)="openLaunchDetail(nextLaunche)">
+    <h1 text-center padding><b>{{ nextLaunche.mission_name }}</b></h1>  
+      <div text-center>
+          <h2>{{ nextLaunche.launch_date_local | date : "EEE d MMMM yyyy"}}
+          <br/>{{ nextLaunche.launch_date_local | date : "HH 'hours' mm 'minutes'"}}</h2>
+          </div>
+        <div text-center>
+        <ion-badge *ngIf= "nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.video_link)">Youtube Live</ion-badge>
+        <br *ngIf= "nextLaunche.links.video_link"/>
+        <ion-badge *ngIf= "nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.video_link)">Youtube Live</ion-badge>
+        <br *ngIf= "nextLaunche.links.video_link"/>
+        <ion-badge *ngIf= "nextLaunche.links.reddit_campaign && !nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.reddit_campaign)">Reddit</ion-badge>
+      </div>
+    <br/>
+    <div text-wrap text-center>{{ nextLaunche.launch_site.site_name_long }}</div>
+  </ion-card>
+  <ion-list padding>
+    <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
+      <h2>
+        <div float-left>{{ launch.mission_name }}</div>
+        <div float-right>
+          <ion-badge color ="primary">{{ launch.launch_date_local | date : 'yyyy/MM/dd'}}</ion-badge>
+        </div>
+      </h2>
+      <br />
+      <p text-wrap>{{ launch.launch_site.site_name_long }}</p>
+    </button>
+  </ion-list>
+</ion-content>

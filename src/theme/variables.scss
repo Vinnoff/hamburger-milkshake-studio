@@ -41,11 +41,12 @@ $colors: (
   dark:       #222
 );
 
-
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$card-ios-text-color:(
+  #FFFFFF
+);
 
 
 
@@ -53,6 +54,9 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$card-md-text-color:(
+  #FFFFFF
+);
 
 
 

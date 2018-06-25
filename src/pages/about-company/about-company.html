@@ -1,0 +1,69 @@
+<!--
+  Generated template for the AboutCompanyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>About</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding class="pageView">
+    <ion-card *ngIf="spaceXInfo" no-padding class="semi-transparent">
+  
+      <img src="../../assets/imgs/spacex_logo.jpg">
+      <ion-card-content text-center>
+          <i>"{{ spaceXInfo.summary }}"</i>
+      </ion-card-content>
+  
+      <ion-item class="transparent">
+        <ion-icon name="logo-usd" item-left large></ion-icon>
+        <h2>Valuation</h2>
+        <p> {{ spaceXInfo.valuation }} $ </p>
+      </ion-item>
+  
+      <ion-item class="transparent">
+        <ion-icon name="people" item-left large></ion-icon>
+        <h2>People</h2>
+        <p> CEO : {{ spaceXInfo.ceo}} </p>
+        <p> COO : {{ spaceXInfo.coo}} </p>
+        <p> CTO : {{ spaceXInfo.cto}} </p>
+        <p> CTO Propulsion : {{ spaceXInfo.cto_propulsion}} </p>
+        <p> Employees : {{ spaceXInfo.employees}} </p>
+      </ion-item>
+  
+      <ion-item class="transparent">
+        <ion-icon name="pin" item-left large></ion-icon>
+        <h2>Headquarter</h2>
+        <p> {{ spaceXInfo.headquarters.address }} </p>
+        <p> {{ spaceXInfo.headquarters.city }}, {{ spaceXInfo.headquarters.state}} </p>
+      </ion-item>
+  
+      <ion-item class="transparent">
+        <ion-icon name="home" item-start large></ion-icon>
+        <h2>Foundation</h2>
+        <p>Founded in {{ spaceXInfo.founded }} by {{ spaceXInfo.founder }}</p>
+      </ion-item>
+  
+      <ion-item class="transparent">
+        <ion-icon name="jet" item-left large></ion-icon>
+        <h2>Launch Sites</h2>
+        <p> {{ spaceXInfo.launch_sites}} </p>
+        <p> Test Sites: {{ spaceXInfo.test_sites}} </p>
+      </ion-item>
+  
+      <ion-item class="transparent">
+        <ion-icon name="car" item-left large></ion-icon>
+        <h2>Vehicles</h2>
+        <p> {{ spaceXInfo.vehicles}} </p>
+      </ion-item>
+    </ion-card>
+  </ion-content>
+  
