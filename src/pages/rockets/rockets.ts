@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 import { Rocket } from '../../models/rockets/Rocket';
 import { RocketDetailPage } from '../rocket-detail/rocket-detail';
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the RocketsPage page.
@@ -22,14 +23,22 @@ export class RocketsPage {
 
   constructor(private navCtrl: NavController, 
     private navParams: NavParams,
-    private spaceXService: SpaceXApiProvider) {
-      this.spaceXService.getAllRockets().subscribe(data => {
-        this.rockets = data;
-      });
+    private spaceXService: SpaceXApiProvider,
+    public loadingCtrl: LoadingController) {
+      
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RocketsPage');
+    let loader = this.loadingCtrl.create({
+      content: 'Chargement...',
+    });
+    loader.present().then(() => {
+      this.spaceXService.getAllRockets().subscribe(data => {
+        this.rockets = data;
+        loader.dismiss();
+      });
+    });
   }
 
   openRocketDetail(rocket: Rocket) {
