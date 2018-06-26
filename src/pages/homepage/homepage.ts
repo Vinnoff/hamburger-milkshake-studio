@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController } from 'ionic-angular';
 import { Launch } from '../../models/launchs/Launch';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -17,20 +17,34 @@ import { LaunchDetailPage } from '../launch-detail/launch-detail';
   selector: 'page-homepage',
   templateUrl: 'homepage.html',
 })
+
 export class HomepagePage {
+  DAYS = 60 * 60 * 24;
+  HOURS = 60 * 60;
+  MINUTES = 60;
 
   launches : Launch[];
   nextLaunche : Launch;
+  theFinalCountdown : String;
 
-  constructor(private navCtrl: NavController, private navParams: NavParams, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser) {
-    this.spaceXService.getNextLaunches().subscribe(data=>{
-      this.nextLaunche = data.shift();
-      this.launches = data;
-    });
+  constructor(private navCtrl: NavController, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser, public loadingCtrl: LoadingController) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomepagePage');
+    let loader = this.loadingCtrl.create({
+      content: 'Chargement...',
+    });
+    loader.present().then(() => {
+      this.spaceXService.getNextLaunches().subscribe(data=>{
+        this.nextLaunche = data.shift();
+        this.launches = data;
+        this.setTimeUntilNextLaunche();
+        setInterval(this.setTimeUntilNextLaunche.bind(this),1000);
+        loader.dismiss();
+      });
+    });
   }
 
   openLink(link : string){
@@ -39,5 +53,22 @@ export class HomepagePage {
 
   openLaunchDetail(launch: Launch) {
     this.navCtrl.push(LaunchDetailPage, {data: launch});
+  }
+
+  setTimeUntilNextLaunche() {
+    var launchDate = new Date(this.nextLaunche.launch_date_utc);
+    var now = new Date();
+    var diffSec = 0;
+
+    var timeUntil = Math.abs(now.getTime() - launchDate.getTime());
+    diffSec = Math.ceil(timeUntil / (1000));
+    var daysUntil  = Math.floor(diffSec / this.DAYS);
+    diffSec -= daysUntil * this.DAYS;
+    var hoursUntil = Math.floor((diffSec) / this.HOURS);
+    diffSec -= hoursUntil * this.HOURS;
+    var minsUntil  = Math.floor((diffSec) / this.MINUTES);
+    diffSec -= minsUntil * this.MINUTES;
+    var secsUntil = diffSec;
+    this.theFinalCountdown = daysUntil + "d : " + hoursUntil + "h : " + minsUntil + "m : " + secsUntil + "s";
   }
 }
