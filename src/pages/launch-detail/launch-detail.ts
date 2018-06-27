@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Launch } from '../../models/launchs/Launch';
+import { RocketDetailPage } from '../rocket-detail/rocket-detail';
 
 /**
  * Generated class for the LaunchDetailPage page.
@@ -25,5 +26,9 @@ export class LaunchDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchDetailPage');
     console.log(this.launch.mission_name);
+  }
+
+  openRocketDetail(rocketId: string) {
+    this.navCtrl.push(RocketDetailPage, {rocketId: rocketId, isFromLaunchOrLaunchPad: true});
   }
 }

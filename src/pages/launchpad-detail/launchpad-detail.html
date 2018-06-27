@@ -37,7 +37,7 @@
           <ion-card-content *ngFor = "let vehicle of launchpad.vehicles_launched">
             <b>Vehicles Launched</b>
             <p>
-              <b>Name: </b>  {{vehicle}}<br />
+              <b>Name: </b>  <button class="cell" (click)="openRocketDetail()">{{vehicle}}</button><br />
             </p>
           </ion-card-content>
       </ion-card>
