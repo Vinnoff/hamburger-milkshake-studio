@@ -69,6 +69,6 @@ export class HomepagePage {
     var minsUntil  = Math.floor((diffSec) / this.MINUTES);
     diffSec -= minsUntil * this.MINUTES;
     var secsUntil = diffSec;
-    this.theFinalCountdown = daysUntil + "d : " + hoursUntil + "h : " + minsUntil + "m : " + secsUntil + "s";
+    this.theFinalCountdown = daysUntil + "day : " + hoursUntil + "hrs : " + minsUntil + "min. : " + secsUntil + "sec.";
   }
 }
