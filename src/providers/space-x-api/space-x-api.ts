@@ -34,6 +34,10 @@ export class SpaceXApiProvider {
     return this.http.get<Rocket[]>(this.baseUrl + "/rockets")
   }
 
+  getOneRocket(rocketId: string) : Observable<Rocket>{
+    return this.http.get<Rocket>(this.baseUrl + "/rockets/" + rocketId)
+  }
+
   getSpaceXInfo() : Observable<CompanyInfo>{
     return this.http.get<CompanyInfo>(this.baseUrl + "/info")
   }
