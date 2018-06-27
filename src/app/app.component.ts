@@ -14,7 +14,7 @@ import { LaunchesPage } from '../pages/launches/launches';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomepagePage;
+  rootPage: any = LaunchesPage;
 
   pages: Array<{title: string, component: any}>;
 
