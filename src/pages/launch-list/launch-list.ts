@@ -20,6 +20,9 @@ import { LoadingController } from 'ionic-angular';
 export class LaunchListPage {
 
   launches: Launch[];
+  descending: boolean = false;
+  order: number;
+  column: string = "";
 
   constructor(private navCtrl: NavController, 
     private navParams: NavParams,
@@ -45,4 +48,23 @@ export class LaunchListPage {
     this.navCtrl.push(LaunchDetailPage, {data: launch});
   }
 
+  sortByName() {
+    this.column = "mission_name";
+    this.sort();
+  }
+
+  sortByDate() {
+    this.column = "launch_date_unix";
+    this.sort();
+  }
+
+  sortByLaunched() {
+    this.column = "launch_success";
+    this.sort();
+  }
+
+  sort(){
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
+  }
 }
