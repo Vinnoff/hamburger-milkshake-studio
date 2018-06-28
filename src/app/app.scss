@@ -45,9 +45,25 @@
 }
 
 toolbar-background {
-    background-color: cyan
+    background-color: rgb(0, 255, 255)
 }
 
 h2, p {
     color: white;
+}
+
+.item-wp p {
+    color: white;
+}
+
+.item-md p {
+    color: rgb(197, 197, 197)
+}
+#filterbut {
+    display: inline-block;
+    border-radius: 60px;
+    width: 20%;
+    height: 20px;
+    font-size: 2vw;
+    
 }

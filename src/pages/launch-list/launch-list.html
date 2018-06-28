@@ -17,8 +17,14 @@
 
 
 <ion-content padding class="pageView">
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+
+  
+  <button ion-button id="filterbut" type="button" (click)="sortByName()">Sort By Name</button>
+  <button ion-button id="filterbut" type="button" (click)="sortByDate()">Sort By Date</button>
+  <button ion-button id="filterbut" type="button" (click)="sortByLaunched()">Filter Launched</button>
   <ion-list>
-    <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
+    <button class="cell" ion-item no-lines *ngFor = "let launch of launches | search : terms | sort: {property: column, order: order}" (click)="openLaunchDetail(launch)">
       <ion-avatar item-start>
         <img src="{{ launch.links.mission_patch_small }}">
       </ion-avatar>
