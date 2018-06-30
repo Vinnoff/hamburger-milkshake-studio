@@ -51,10 +51,20 @@
         <ion-card-content>
           <h2><b>DIAMETER</b></h2>
           <div class = "drawLine"></div><br />
-          <p>
-            <b>Meter: </b> {{rocket?.diameter.meters}}  <br />
-            <b>Feet: </b> {{rocket?.diameter.feet}} <br/>
-          </p>
+          <table>
+              <tr>
+                <td>
+                    <img src="../../assets/imgs/diameter.png">
+                </td>
+                <td class="tdSpace">
+                    <p>
+                        <b>Meter: </b> {{rocket?.diameter.meters}}  <br />
+                        <b>Feet: </b> {{rocket?.diameter.feet}} <br/>
+                    </p>
+                </td>
+              </tr>
+            </table>
+          
         </ion-card-content>
     </ion-card>
 
