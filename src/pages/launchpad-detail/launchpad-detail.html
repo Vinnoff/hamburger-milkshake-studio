@@ -25,7 +25,8 @@
   
       <ion-card class="cardContent">
           <ion-card-content>
-            <b>Location</b>
+            <h2><b>LOCATION</b></h2> 
+            <div class = "drawLine"></div><br />
             <p>
               <b>Name: </b> {{launchpad.location.name}}  <br />
               <b>Region: </b> {{launchpad.location.region}} <br/>
@@ -33,11 +34,12 @@
           </ion-card-content>
       </ion-card>
   
-      <ion-card class="cardContent">
-          <ion-card-content *ngFor = "let vehicle of launchpad.vehicles_launched">
-            <b>Vehicles Launched</b>
-            <p>
-              <b>Name: </b>  <button class="cell" (click)="openRocketDetail()">{{vehicle}}</button><br />
+      <ion-card class="cardContent"> 
+          <ion-card-content>
+            <h2><b>VEHICLES LAUNCHED</b></h2>
+            <div class = "drawLine"></div><br />
+            <p *ngFor = "let vehicle of launchpad.vehicles_launched">
+              <b>Name: </b> {{vehicle}}<br />
             </p>
           </ion-card-content>
       </ion-card>
