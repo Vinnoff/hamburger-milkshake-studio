@@ -31,7 +31,7 @@
     border-radius: 10px 10px 10px 10px;
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
-    margin:10px auto;
+    margin-bottom: 10px auto;
 }
 
 .semi-transparent {
@@ -66,4 +66,26 @@ h2, p {
     height: 20px;
     font-size: 2vw;
     
+}
+
+.drawLine{
+    border: 0.5px solid white;
+}
+
+ion-card {
+    width:100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+ion-card-header{
+    width:100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.tdSpace {
+    padding-left: 20px;
 }

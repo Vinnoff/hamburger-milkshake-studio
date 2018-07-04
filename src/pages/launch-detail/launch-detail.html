@@ -22,13 +22,18 @@
         <b>Année de lancement:</b> {{launch.launch_year}} <br/>
         <b>Site:</b> {{launch.launch_site.site_name}}<br/>
       </p>
+      <br />
 
-      <p>
-        <b>Rocket:</b> <button class="cell" (click)="openRocketDetail(launch.rocket.rocket_id)">{{launch.rocket.rocket_name}}</button><br/> 
+      <h2><b>ROCKET</b></h2> 
+      <div class = "drawLine"></div>
+      <p>   
+         <button class="cell" (click)="openRocketDetail(launch.rocket.rocket_id)">{{launch.rocket.rocket_name}}</button><br/> 
       </p>
+      <br />
 
+      <h2><b>DETAIL</b></h2> 
+      <div class = "drawLine"></div><br />
       <p>
-          <b>Detail:</b><br/>
           {{launch.details}}<br/> 
       </p>
     </ion-card-content>

@@ -18,6 +18,9 @@
   <ion-content padding class="pageView">
       <ion-list>
         <button class="cell" ion-item no-lines *ngFor = "let launchpad of launchpads" (click)="openLaunchpadDetail(launchpad)">
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/launchpad_cell.png">
+          </ion-avatar>
           {{ launchpad.full_name }} <br />
           <p>ID: {{ launchpad.id}}</p>
         </button>

@@ -16,6 +16,9 @@
 <ion-content padding class="pageView">
     <ion-list>
       <button class="cell" ion-item no-lines *ngFor = "let capsule of capsules" (click)="openCapsuleDetail(capsule)">
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/capsule_cell.png">
+        </ion-avatar>
         {{ capsule.name }} <br />
         <p>ID: {{ capsule.id}}</p>
       </button>
