@@ -29,8 +29,8 @@ export class LaunchDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchDetailPage');
     this.flight_number = this.navParams.get('flightNumber');
-
-    if(this.flight_number != "") {
+    this.launch = this.navParams.get('data');
+    if((this.flight_number != "") && (this.launch == null)) {
       let loader = this.loadingCtrl.create({
         content: 'Chargement...',
       });
@@ -40,9 +40,7 @@ export class LaunchDetailPage {
           loader.dismiss();
         });
       });
-    } else {
-      this.launch = this.navParams.get('data');
-    }
+    } 
   }
 
   openRocketDetail(rocketId: string) {
