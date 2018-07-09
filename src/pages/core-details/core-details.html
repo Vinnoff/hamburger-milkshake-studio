@@ -14,27 +14,20 @@
 
 
 <ion-content padding class="pageView">
-  <ion-title class="cardContent">Details</ion-title>
-  <ion-item class="cardContent">
-      <ion-icon name="home" item-left large></ion-icon>
-      <h2>Return(s) To Launch Site : {{core.rtls_landings}}</h2>
-    </ion-item>
-    <ion-item class="cardContent">
-      <ion-icon name="help-buoy" item-left large></ion-icon>
-      <h2>Return(s) To ASDS : {{core.asds_landings}}</h2>
-    </ion-item>
-    <ion-item text-wrap class="cardContent">
-      <ion-icon name="heart" item-left large></ion-icon>
-      <h2>State : {{core.status}}</h2>
-      <p><i>{{core.details}}</i></p>  
-    </ion-item>
-    <br/>
-    <ion-list class="cardContent">
-      <ion-title>Missions</ion-title>
-      <button class="transparent" ion-item *ngFor = "let launch of core.missions">
-        <h2>
-          {{ launch }}
-        </h2>
-      </button>
-    </ion-list>
+  <ion-card class="cardContent">
+      <ion-card-content>
+          <ion-title class="cardContent">Details</ion-title> 
+          <p>Return(s) To Launch Site : {{core.rtls_landings}}</p>
+          <p>Return(s) To ASDS : {{core.asds_landings}}</p>
+          <p>State : {{core.status}}</p>
+          <p><i>{{core.details}}</i></p>  
+        <p><ion-list>
+            <ion-title class="cardContent">Missions</ion-title> 
+            <button class="transparent" ion-item *ngFor = "let launch of core.missions" (click)="openLaunchDetail(launch)" no-lines>
+                {{ launch }}
+            </button>
+        </ion-list></p>
+      </ion-card-content>
+  </ion-card>
+
 </ion-content>
