@@ -6,7 +6,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LaunchDetailPage } from '../launch-detail/launch-detail';
 
 /**
- * Generated class for the HomepagePage page.
+ * Generated class for the NextLaunchesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,11 +14,11 @@ import { LaunchDetailPage } from '../launch-detail/launch-detail';
 
 @IonicPage()
 @Component({
-  selector: 'page-homepage',
-  templateUrl: 'homepage.html',
+  selector: 'page-next-launches',
+  templateUrl: 'next-launches.html',
 })
 
-export class HomepagePage {
+export class NextLaunchesPage {
   DAYS = 60 * 60 * 24;
   HOURS = 60 * 60;
   MINUTES = 60;
@@ -26,13 +26,14 @@ export class HomepagePage {
   launches : Launch[];
   nextLaunche : Launch;
   theFinalCountdown : String;
+  imageLocation : "../../assets/imgs/launchpad_cell";
 
   constructor(private navCtrl: NavController, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser, public loadingCtrl: LoadingController) {
     
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomepagePage');
+    console.log('ionViewDidLoad NextLaunchesPage');
     let loader = this.loadingCtrl.create({
       content: 'Chargement...',
     });
@@ -69,6 +70,14 @@ export class HomepagePage {
     var minsUntil  = Math.floor((diffSec) / this.MINUTES);
     diffSec -= minsUntil * this.MINUTES;
     var secsUntil = diffSec;
-    this.theFinalCountdown = daysUntil + "d : " + hoursUntil + "h : " + minsUntil + "m : " + secsUntil + "s";
+    if(daysUntil == 0){
+      this.theFinalCountdown = hoursUntil + "hrs : " + minsUntil + "min. : " + secsUntil + "sec.";
+    } else if(daysUntil == 0 && hoursUntil == 0){
+      this.theFinalCountdown = minsUntil + "min. : " + secsUntil + "sec.";
+    } else if(daysUntil == 0 && hoursUntil == 0 && minsUntil == 0){
+      this.theFinalCountdown = secsUntil + "sec.";
+    } else {
+      this.theFinalCountdown = daysUntil + "day : " + hoursUntil + "hrs : " + minsUntil + "min. : " + secsUntil + "sec.";
+    }
   }
 }
