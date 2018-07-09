@@ -47,7 +47,6 @@ export class CoreDetailsPage {
           this.navCtrl.push(LaunchDetailPage, {flightNumber: this.launches[i].flight_number});
         }
       });
-
     }
   }
 }

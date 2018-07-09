@@ -38,8 +38,8 @@
           <ion-card-content>
             <h2><b>VEHICLES LAUNCHED</b></h2>
             <div class = "drawLine"></div><br />
-            <p *ngFor = "let vehicle of launchpad.vehicles_launched">
-              <b>Name: </b> {{vehicle}}<br />
+            <p *ngFor = "let vehicle of launchpad.vehicles_launched" >
+              <b>Name: </b> <button class= "cell" (click)="openRocketDetail(vehicle)">{{vehicle}}</button><br />
             </p>
           </ion-card-content>
       </ion-card>
