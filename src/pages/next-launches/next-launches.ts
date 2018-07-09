@@ -26,6 +26,7 @@ export class NextLaunchesPage {
   launches : Launch[];
   nextLaunche : Launch;
   theFinalCountdown : String;
+  imageLocation : "../../assets/imgs/launchpad_cell";
 
   constructor(private navCtrl: NavController, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser, public loadingCtrl: LoadingController) {
     
@@ -69,6 +70,14 @@ export class NextLaunchesPage {
     var minsUntil  = Math.floor((diffSec) / this.MINUTES);
     diffSec -= minsUntil * this.MINUTES;
     var secsUntil = diffSec;
-    this.theFinalCountdown = daysUntil + "day : " + hoursUntil + "hrs : " + minsUntil + "min. : " + secsUntil + "sec.";
+    if(daysUntil == 0){
+      this.theFinalCountdown = hoursUntil + "hrs : " + minsUntil + "min. : " + secsUntil + "sec.";
+    } else if(daysUntil == 0 && hoursUntil == 0){
+      this.theFinalCountdown = minsUntil + "min. : " + secsUntil + "sec.";
+    } else if(daysUntil == 0 && hoursUntil == 0 && minsUntil == 0){
+      this.theFinalCountdown = secsUntil + "sec.";
+    } else {
+      this.theFinalCountdown = daysUntil + "day : " + hoursUntil + "hrs : " + minsUntil + "min. : " + secsUntil + "sec.";
+    }
   }
 }

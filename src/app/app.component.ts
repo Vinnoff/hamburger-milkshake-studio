@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomepagePage } from '../pages/homepage/homepage';
 import { AboutTabsPage } from '../pages/about-tabs/about-tabs';
 import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
 import { LaunchesPage } from '../pages/launches/launches';

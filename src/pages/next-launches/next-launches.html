@@ -13,20 +13,36 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="pageView">
-  <ion-card class="semi-transparent" ion-item no-lines *ngIf = "nextLaunche" (click)="openLaunchDetail(nextLaunche)">
-    <h1 text-center padding><b>{{ nextLaunche.mission_name }}</b></h1>  
-      <div text-center>
-          <h2>{{theFinalCountdown}}</h2>
+  <ion-card class="semi-transparent" ion-item no-lines *ngIf = "nextLaunche">
+    <div>
+      <div class="title-card">Upcoming</div>
+      <div class="subtitle-card">{{theFinalCountdown}}</div>
+    </div>
+    <br/>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="content-card">
+            Launch {{ nextLaunche.flight_number }} :
+            <br/>
+            <b>{{ nextLaunche.mission_name }}</b>
           </div>
-        <div text-center>
+          <div>
+              Location :
+              <br/>
+              <b>{{ nextLaunche.launch_site.site_name}}</b>
+              <img style="width: 15px;display: inline;" src="../../assets/imgs/location_icon.png"/>      
+            </div>
+        </ion-col>
+        <ion-col text-right>
           <br *ngIf= "nextLaunche.links.video_link"/>
           <ion-badge *ngIf= "nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.video_link)">Youtube Live</ion-badge>
           <br *ngIf= "nextLaunche.links.wikipedia"/>
-          <ion-badge *ngIf= "nextLaunche.links.wikipedia" color ="danger" (click)="openLink(nextLaunche.links.wikipedia)">Youtube Live</ion-badge>
-        <ion-badge *ngIf= "nextLaunche.links.reddit_campaign && !nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.reddit_campaign)">Reddit</ion-badge>
-      </div>
-    <br/>
-    <div text-wrap text-center>{{ nextLaunche.launch_site.site_name_long }}</div>
+          <ion-badge *ngIf= "nextLaunche.links.wikipedia" color ="danger" (click)="openLink(nextLaunche.links.wikipedia)">Wikipedia</ion-badge>
+          <ion-badge *ngIf= "nextLaunche.links.reddit_campaign && !nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.reddit_campaign)">Reddit</ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
   <ion-list padding>
     <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
