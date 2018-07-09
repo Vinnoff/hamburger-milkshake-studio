@@ -42,10 +42,12 @@ export class CoreDetailsPage {
 
   openLaunchDetail(nameMission: String) {
     for(var i = 0; i < this.launches.length; i++){
-      console.log(nameMission + " == " + this.launches[i].mission_name);
-      if (this.launches[i].mission_name == nameMission) {
-        this.navCtrl.push(LaunchDetailPage, {flightNumber: this.launches[i].flight_number});
-      }
+      this.launches[i].rocket.second_stage.payloads.forEach(payload => {
+        if (payload.payload_id == nameMission) {
+          this.navCtrl.push(LaunchDetailPage, {flightNumber: this.launches[i].flight_number});
+        }
+      });
+
     }
   }
 }
