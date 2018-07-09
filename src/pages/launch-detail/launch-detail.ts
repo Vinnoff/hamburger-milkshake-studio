@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Launch } from '../../models/launchs/Launch';
 import { RocketDetailPage } from '../rocket-detail/rocket-detail';
+import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 
 /**
  * Generated class for the LaunchDetailPage page.
@@ -18,14 +19,30 @@ import { RocketDetailPage } from '../rocket-detail/rocket-detail';
 export class LaunchDetailPage {
 
   launch: Launch;
+  flight_number = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.launch = this.navParams.get('data');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private spaceXService: SpaceXApiProvider, 
+    public loadingCtrl: LoadingController) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LaunchDetailPage');
-    console.log(this.launch.mission_name);
+    this.flight_number = this.navParams.get('flightNumber');
+
+    if(this.flight_number != "") {
+      let loader = this.loadingCtrl.create({
+        content: 'Chargement...',
+      });
+      loader.present().then(() => {
+        this.spaceXService.getLaunch(this.flight_number).subscribe(data => {
+          this.launch = data[0];
+          loader.dismiss();
+        });
+      });
+    } else {
+      this.launch = this.navParams.get('data');
+    }
   }
 
   openRocketDetail(rocketId: string) {

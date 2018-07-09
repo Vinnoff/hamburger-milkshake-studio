@@ -53,4 +53,8 @@ export class SpaceXApiProvider {
   getAllCores(): Observable<CoreDetails[]>{
     return this.http.get<CoreDetails[]>(this.baseUrl + "/parts/cores")
   }
+
+  getLaunch(flight_number: string) : Observable<Launch>{
+    return this.http.get<Launch>(this.baseUrl + "/launches?flight_number=" + flight_number)
+  }
 }
