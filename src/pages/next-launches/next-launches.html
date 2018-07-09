@@ -19,28 +19,22 @@
       <div class="subtitle-card">{{theFinalCountdown}}</div>
     </div>
     <br/>
+    <div class="content-card">
+      Launch {{ nextLaunche.flight_number }} :
+      <b>{{ nextLaunche.mission_name }}</b>
+    </div>
+    <div>
+      Location :
+      <b>{{ nextLaunche.launch_site.site_name}}</b>
+      <img style="width: 15px;display: inline;" src="../../assets/imgs/location_icon.png"/>      
+    </div>
     <ion-grid>
       <ion-row>
-        <ion-col>
-          <div class="content-card">
-            Launch {{ nextLaunche.flight_number }} :
-            <br/>
-            <b>{{ nextLaunche.mission_name }}</b>
-          </div>
-          <div>
-              Location :
-              <br/>
-              <b>{{ nextLaunche.launch_site.site_name}}</b>
-              <img style="width: 15px;display: inline;" src="../../assets/imgs/location_icon.png"/>      
-            </div>
-        </ion-col>
-        <ion-col text-right>
-          <br *ngIf= "nextLaunche.links.video_link"/>
-          <ion-badge *ngIf= "nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.video_link)">Youtube Live</ion-badge>
-          <br *ngIf= "nextLaunche.links.wikipedia"/>
-          <ion-badge *ngIf= "nextLaunche.links.wikipedia" color ="danger" (click)="openLink(nextLaunche.links.wikipedia)">Wikipedia</ion-badge>
-          <ion-badge *ngIf= "nextLaunche.links.reddit_campaign && !nextLaunche.links.video_link" color ="danger" (click)="openLink(nextLaunche.links.reddit_campaign)">Reddit</ion-badge>
-        </ion-col>
+        <ion-badge text-center ion-col *ngIf= "nextLaunche.links.video_link" color ="youtube" (click)="openLink(nextLaunche.links.video_link)">Youtube Live</ion-badge>
+        <br *ngIf= "nextLaunche.links.video_link"/>
+        <ion-badge text-center ion-col *ngIf= "nextLaunche.links.wikipedia" color ="wikipedia" (click)="openLink(nextLaunche.links.wikipedia)">Wikipedia</ion-badge>
+        <br *ngIf= "nextLaunche.links.wikipedia"/>
+        <ion-badge text-center ion-col *ngIf= "nextLaunche.links.reddit_campaign" color ="reddit" (click)="openLink(nextLaunche.links.reddit_campaign)">Reddit Campaign</ion-badge>
       </ion-row>
     </ion-grid>
   </ion-card>
