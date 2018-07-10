@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular'
+import { NavController, NavParams, LoadingController, Alert } from 'ionic-angular'
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
-import { GoogleMaps, GoogleMap, GoogleMapsEvent, GoogleMapOptions, CameraPosition, MarkerOptions, Marker, GoogleMapsMapTypeId } from '@ionic-native/google-maps';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, GoogleMapOptions, CameraPosition, MarkerOptions, Marker, GoogleMapsMapTypeId, MapType } from '@ionic-native/google-maps';
 import { Launchpads } from '../../models/launchpads/Launchpads';
 import { Location } from '../../models/launchpads/Location';
+import { LaunchpadDetailPage } from '../launchpad-detail/launchpad-detail';
 
 @Component({
   selector: 'page-google-map',
@@ -52,7 +53,7 @@ export class GoogleMapPage {
                zoom: 16,
                tilt: 30,
              },
-             mapType : GoogleMapsMapTypeId.SATELLITE
+             mapType : 'MAP_TYPE_SATELLITE' 
           };
       
           this.map = GoogleMaps.create('map', mapOptions);
@@ -65,12 +66,21 @@ export class GoogleMapPage {
                 lat: this.launchpads[i].location.latitude,
                 lng: this.launchpads[i].location.longitude
               },
-              snippet: this.launchpads[i].details
+              snippet: this.launchpads[i].details,
+              launchpad:this.launchpads[i]
               
+            }).then((marker) => {
+              marker.on(GoogleMapsEvent.INFO_CLICK).subscribe((click: any) => {
+                this.openLaunchpadDetail(marker.get("launchpad"));
+              })
             });
           }
         });
         loader.dismiss();
       });
+  }
+
+  openLaunchpadDetail(launchpad: Launchpads) {
+    this.navCtrl.push(LaunchpadDetailPage, {data: launchpad});
   }
 }
