@@ -52,10 +52,6 @@ export class NextLaunchesPage {
     this.inAppBrowser.create(encodeURI(link), '_system', null);
   }
 
-  openLaunchDetail(launch: Launch) {
-    this.navCtrl.push(LaunchDetailPage, {data: launch});
-  }
-
   openMap(siteID: string){
     console.log("siteId : " + siteID)
     this.navCtrl.push(GoogleMapPage, siteID);
