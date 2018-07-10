@@ -23,7 +23,7 @@
       Launch {{ nextLaunche.flight_number }} :
       <b>{{ nextLaunche.mission_name }}</b>
     </div>
-    <div>
+    <div (click)="openMap(nextLaunche.launch_site.site_id)">
       Location :
       <b>{{ nextLaunche.launch_site.site_name}}</b>
       <img style="width: 15px;display: inline;" src="../../assets/imgs/location_icon.png"/>      
@@ -39,7 +39,7 @@
     </ion-grid>
   </ion-card>
   <ion-list padding>
-    <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
+    <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openMap(launch.launch_site.site_id)">
       <h2>
         <div float-left>{{ launch.mission_name }}</div>
         <div float-right>
