@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { GoogleMaps } from '@ionic-native/google-maps';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
@@ -18,6 +19,7 @@ import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail'
 import { LaunchesPage } from '../pages/launches/launches';
 import { SearchPipe } from '../pipes/search/search';
 import { SortPipe } from '../pipes/sort/sort';
+import { GoogleMapPage } from '../pages/google-map/google-map';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { SortPipe } from '../pipes/sort/sort';
     LaunchpadDetailPage,
     CoreDetailsPage,
     SearchPipe,
-    SortPipe
+    SortPipe,
+    GoogleMapPage,
   ],
   imports: [
     BrowserModule,
@@ -53,13 +56,15 @@ import { SortPipe } from '../pipes/sort/sort';
     CapsuleDetailPage,
     CoreDetailsPage,
     LaunchpadDetailPage,
+    GoogleMapPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SpaceXApiProvider,
-    InAppBrowser
+    InAppBrowser,
+    GoogleMaps
   ]
 })
 export class AppModule {}

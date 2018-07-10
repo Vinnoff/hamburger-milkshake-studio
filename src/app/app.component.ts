@@ -11,7 +11,7 @@ import { LaunchesPage } from '../pages/launches/launches';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav) nav: Nav;  
 
   rootPage: any = LaunchesPage;
 

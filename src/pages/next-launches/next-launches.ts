@@ -4,6 +4,7 @@ import { Launch } from '../../models/launchs/Launch';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { LaunchDetailPage } from '../launch-detail/launch-detail';
+import { GoogleMapPage } from '../google-map/google-map';
 
 /**
  * Generated class for the NextLaunchesPage page.
@@ -29,7 +30,6 @@ export class NextLaunchesPage {
   imageLocation : "../../assets/imgs/launchpad_cell";
 
   constructor(private navCtrl: NavController, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser, public loadingCtrl: LoadingController) {
-    
   }
 
   ionViewDidLoad() {
@@ -54,6 +54,10 @@ export class NextLaunchesPage {
 
   openLaunchDetail(launch: Launch) {
     this.navCtrl.push(LaunchDetailPage, {data: launch});
+  }
+
+  openMap(siteID: string){
+    this.navCtrl.push(GoogleMapPage, siteID);
   }
 
   setTimeUntilNextLaunche() {
