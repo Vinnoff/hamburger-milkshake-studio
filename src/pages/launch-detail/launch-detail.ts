@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Launch } from '../../models/launchs/Launch';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RocketDetailPage } from '../rocket-detail/rocket-detail';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 
@@ -21,7 +22,7 @@ export class LaunchDetailPage {
   launch: Launch;
   flight_number = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private spaceXService: SpaceXApiProvider, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser, 
     public loadingCtrl: LoadingController) {
     
   }
@@ -45,5 +46,12 @@ export class LaunchDetailPage {
 
   openRocketDetail(rocketId: string) {
     this.navCtrl.push(RocketDetailPage, {rocketId: rocketId, isFromLaunchOrLaunchPad: true});
+  }
+
+  openLink(link : string){
+    this.inAppBrowser.create(encodeURI(link), '_self', {
+      hardwareback: 'no',
+      location: 'no'
+    });
   }
 }
