@@ -3,7 +3,7 @@
     <name>SpaceX by Projet Chaos</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.95:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -88,6 +88,6 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBx9IAcxewZPqB3IgRwGlhpduWv_owrZw4" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyBO3uzl98QPKEk0ZIhrjt9eR8GsxTjlsXU" />
     </plugin>
-    <engine name="android" spec="~7.0.0" />
-    <engine name="ios" spec="~4.5.4" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>

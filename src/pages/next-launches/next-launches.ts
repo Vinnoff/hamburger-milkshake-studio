@@ -57,6 +57,7 @@ export class NextLaunchesPage {
   }
 
   openMap(siteID: string){
+    console.log("siteId : " + siteID)
     this.navCtrl.push(GoogleMapPage, siteID);
   }
 

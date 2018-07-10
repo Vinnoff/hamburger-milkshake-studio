@@ -50,6 +50,10 @@ export class SpaceXApiProvider {
     return this.http.get<Launchpads[]>(this.baseUrl + "/launchpads")
   }
 
+  getLaunchpad(siteId: string) : Observable<Launchpads>{
+    return this.http.get<Launchpads>(this.baseUrl + "/launchpads/" + siteId)
+  }
+
   getAllCores(): Observable<CoreDetails[]>{
     return this.http.get<CoreDetails[]>(this.baseUrl + "/parts/cores")
   }
