@@ -27,7 +27,7 @@ export class NextLaunchesPage {
   launches : Launch[];
   nextLaunche : Launch;
   theFinalCountdown : String;
-  imageLocation : "../../assets/imgs/launchpad_cell";
+  imageLocation : "assets/imgs/launchpad_cell";
 
   constructor(private navCtrl: NavController, private spaceXService: SpaceXApiProvider, private inAppBrowser : InAppBrowser, public loadingCtrl: LoadingController) {
   }

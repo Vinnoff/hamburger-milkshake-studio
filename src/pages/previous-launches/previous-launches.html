@@ -20,7 +20,7 @@
     <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
       <ion-avatar item-start>
         <img *ngIf='launch.links.mission_patch_small' src="{{ launch.links.mission_patch_small }}">
-        <img *ngIf='!launch.links.mission_patch_small' src="../../assets/imgs/spacex_round_logo.png">
+        <img *ngIf='!launch.links.mission_patch_small' src="assets/imgs/spacex_round_logo.png">
       </ion-avatar>
       <h2>
         <div float-left>{{ launch.mission_name }}</div>
