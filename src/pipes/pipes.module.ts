@@ -8,4 +8,11 @@ import { SortPipe } from './sort/sort';
 	exports: [SearchPipe,
     SortPipe]
 })
-export class PipesModule {}
+export class PipesModule {
+	static forRoot() {
+		return {
+			ngModule: PipesModule,
+			providers: [],
+		};
+	 }
+}

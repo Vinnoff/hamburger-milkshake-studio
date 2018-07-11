@@ -1,5 +1,5 @@
 <!--
-  Generated template for the PreviousLaunchesPage page.
+  Generated template for the LaunchListPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -10,23 +10,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Previous Launches</ion-title>
+    <ion-title>Launch List</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 
 <ion-content padding class="pageView">
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+
+  
+  <button ion-button id="filterbut" type="button" (click)="sortByName()">Sort By Name</button>
+  <button ion-button id="filterbut" type="button" (click)="sortByDate()">Sort By Date</button>
+  <button ion-button id="filterbut" type="button" (click)="sortByLaunched()">Filter Launched</button>
   <ion-list>
-    <button class="cell" ion-item no-lines *ngFor = "let launch of launches" (click)="openLaunchDetail(launch)">
+    <button class="cell" ion-item no-lines *ngFor = "let launch of launches | search : terms | sort: {property: column, order: order}" (click)="openLaunchDetail(launch)">
       <ion-avatar item-start>
-        <img *ngIf='launch.links.mission_patch_small' src="{{ launch.links.mission_patch_small }}">
-        <img *ngIf='!launch.links.mission_patch_small' src="assets/imgs/spacex_round_logo.png">
+        <img src="{{ launch.links.mission_patch_small }}">
       </ion-avatar>
       <h2>
         <div float-left>{{ launch.mission_name }}</div>
         <div float-right>
-          <ion-badge *ngIf="launch.launch_success == true" color ="primary">Success</ion-badge>
-          <ion-badge *ngIf="launch.launch_success == false" color ="danger">Failed</ion-badge>
+          <ion-badge *ngIf="launch.launch_success == true" color ="primary">Launched</ion-badge>
         </div>
       </h2>
       <br />

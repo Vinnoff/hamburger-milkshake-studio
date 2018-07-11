@@ -20,15 +20,19 @@ import { LoadingController } from 'ionic-angular';
 export class PreviousLaunchesPage {
 
   launches: Launch[];
+  descending: boolean = false;
+  order: number;
+  column: string = "";
 
   constructor(private navCtrl: NavController, 
+    private navParams: NavParams,
     private spaceXService: SpaceXApiProvider, 
     public loadingCtrl: LoadingController) {
       
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PreviousLaunchesPage');
+    console.log('ionViewDidLoad LaunchListPage');
     let loader = this.loadingCtrl.create({
       content: 'Chargement...',
     });
@@ -42,5 +46,25 @@ export class PreviousLaunchesPage {
 
   openLaunchDetail(launch: Launch) {
     this.navCtrl.push(LaunchDetailPage, {data: launch});
+  }
+
+  sortByName() {
+    this.column = "mission_name";
+    this.sort();
+  }
+
+  sortByDate() {
+    this.column = "launch_date_unix";
+    this.sort();
+  }
+
+  sortByLaunched() {
+    this.column = "launch_success";
+    this.sort();
+  }
+
+  sort(){
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
 }
