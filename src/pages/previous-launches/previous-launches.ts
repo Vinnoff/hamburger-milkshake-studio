@@ -32,12 +32,12 @@ export class PreviousLaunchesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LaunchListPage');
+    console.log('ionViewDidLoad PreviousLaunchesPage');
     let loader = this.loadingCtrl.create({
       content: 'Chargement...',
     });
     loader.present().then(() => {
-      this.spaceXService.getAllLaunches().subscribe(data => {
+      this.spaceXService.getPreviousLaunches().subscribe(data => {
         this.launches = data;
         loader.dismiss();
       });
