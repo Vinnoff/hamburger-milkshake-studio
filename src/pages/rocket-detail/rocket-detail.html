@@ -7,58 +7,90 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{rocket.name}}</ion-title>
+    <ion-title>{{rocket?.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="pageView">
+    
     <ion-card class="cardContent">
       <ion-card-content>
         <p>
-          <b>Nom: </b> {{rocket.name}}  <br />
-          <b>ID: </b> {{rocket.id}} <br/>
-          <b>Type: </b> {{rocket.type}}<br/>
-          <b>Coût par lancement: </b> {{rocket.cost_per_launch}} $<br/> 
+          <b>Name: </b> {{rocket?.name}}  <br />
+          <b>ID: </b> {{rocket?.id}} <br/>
+          <b>Type: </b> {{rocket?.type}}<br/>
+          <b>Cost per launch: </b> <br />
         </p>
+        <div align="right"><font size="5">{{rocket?.cost_per_launch}} $ </font></div>
       </ion-card-content>
     </ion-card>
 
     <ion-card class="cardContent">
         <ion-card-content>
-          <b>Hauteur</b>
-          <p>
-            <b>Mètre: </b> {{rocket.height.meters}}  <br />
-            <b>Feet: </b> {{rocket.height.feet}} <br/>
-          </p>
+          <h2><b>HEIGHT</b></h2>
+          <div class = "drawLine"></div><br />
+          <table>
+            <tr>
+              <td>
+                  <img src="assets/imgs/height_rocket.png">
+              </td>
+              <td class="tdSpace">
+                <p>
+                  <b>Meter: </b> {{rocket?.height.meters}}  <br />
+                  <b>Feet: </b> {{rocket?.height.feet}} <br/>
+                </p>
+              </td>
+            </tr>
+          </table>
         </ion-card-content>
     </ion-card>
 
     <ion-card class="cardContent">
         <ion-card-content>
-          <b>Diamètre</b>
-          <p>
-            <b>Mètre: </b> {{rocket.diameter.meters}}  <br />
-            <b>Feet: </b> {{rocket.diameter.feet}} <br/>
-          </p>
+          <h2><b>DIAMETER</b></h2>
+          <div class = "drawLine"></div><br />
+          <table>
+              <tr>
+                <td>
+                    <img src="assets/imgs/diameter.png">
+                </td>
+                <td class="tdSpace">
+                    <p>
+                        <b>Meter: </b> {{rocket?.diameter.meters}}  <br />
+                        <b>Feet: </b> {{rocket?.diameter.feet}} <br/>
+                    </p>
+                </td>
+              </tr>
+            </table>
         </ion-card-content>
     </ion-card>
 
     <ion-card class="cardContent">
         <ion-card-content>
-          <b>Engine</b>
-          <p>
-            <b>Type: </b> {{rocket.engines.type}}  <br />
-            <b>Version: </b> {{rocket.engines.version}} <br/>
-          </p>
+          <h2><b>ENGINE</b></h2>
+          <div class = "drawLine"></div><br />
+          <table>
+              <tr>
+                <td>
+                    <img src="assets/imgs/engine.png">
+                </td>
+                <td class="tdSpace">
+                  <p>
+                    <b>Type: </b> {{rocket?.engines.type}}  <br />
+                    <b>Version: </b> {{rocket?.engines.version}} <br/>
+                  </p>
+                </td>
+              </tr>
+            </table>
         </ion-card-content>
     </ion-card>
 
     <ion-card class="cardContent">
         <ion-card-content>
           <p>
-            {{rocket.description}} <br/>
+            {{rocket?.description}} <br/>
           </p>
         </ion-card-content>
     </ion-card>

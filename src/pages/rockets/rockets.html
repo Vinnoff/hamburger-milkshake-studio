@@ -17,6 +17,9 @@
 <ion-content padding class="pageView">
     <ion-list>
       <button class="cell" ion-item no-lines *ngFor = "let rocket of rockets" (click)="openRocketDetail(rocket)">
+        <ion-avatar item-start>
+          <img src="assets/imgs/rocket_icon_cell.png">
+        </ion-avatar>
         {{ rocket.name }} <br />
         <p>{{ rocket.country}}</p>
       </button>

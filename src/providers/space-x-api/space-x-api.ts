@@ -26,12 +26,20 @@ export class SpaceXApiProvider {
     return this.http.get<Launch[]>(this.baseUrl + "/launches/all")
   }
 
+  getPreviousLaunches() : Observable<Launch[]>{
+    return this.http.get<Launch[]>(this.baseUrl + "/launches")
+  }
+
   getNextLaunches() : Observable<Launch[]>{
     return this.http.get<Launch[]>(this.baseUrl + "/launches/upcoming")
   }
 
   getAllRockets() : Observable<Rocket[]>{
     return this.http.get<Rocket[]>(this.baseUrl + "/rockets")
+  }
+
+  getOneRocket(rocketId: string) : Observable<Rocket>{
+    return this.http.get<Rocket>(this.baseUrl + "/rockets/" + rocketId)
   }
 
   getSpaceXInfo() : Observable<CompanyInfo>{
@@ -46,7 +54,15 @@ export class SpaceXApiProvider {
     return this.http.get<Launchpads[]>(this.baseUrl + "/launchpads")
   }
 
+  getLaunchpad(siteId: string) : Observable<Launchpads>{
+    return this.http.get<Launchpads>(this.baseUrl + "/launchpads/" + siteId)
+  }
+
   getAllCores(): Observable<CoreDetails[]>{
     return this.http.get<CoreDetails[]>(this.baseUrl + "/parts/cores")
+  }
+
+  getLaunch(flight_number: string) : Observable<Launch[]>{
+    return this.http.get<[Launch]>(this.baseUrl + "/launches?flight_number=" + flight_number)
   }
 }

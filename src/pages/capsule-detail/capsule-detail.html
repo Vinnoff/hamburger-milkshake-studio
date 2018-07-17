@@ -25,37 +25,69 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-card class="cardContent">
-        <ion-card-content *ngFor = "let thruster of capsule.thrusters">
-          <b>Thrusters</b>
-          <p>
-            <b>Type: </b>  {{thruster.type}}<br />
-            <b>Pods: </b>  {{thruster.pods}}<br />
-            <b>Fuel 1: </b>  {{thruster.fuel_1}}<br />
-            <b>Fuel 2: </b>  {{thruster.fuel_2}}<br />
-          </p>
+    <ion-card class="cardContent"> 
+        <ion-card-content>
+          <h2> <b>Thrusters</b></h2>
+          <div class = "drawLine"></div><br />
+          <table>
+              <tr>
+                <td>
+                    <img src="assets/imgs/thruster.png">
+                </td>
+                <td class="tdSpace">
+                    <p *ngFor = "let thruster of capsule.thrusters">
+                        <b>Type: </b>  {{thruster.type}}<br />
+                        <b>Pods: </b>  {{thruster.pods}}<br />
+                        <b>Fuel 1: </b>  {{thruster.fuel_1}}<br />
+                        <b>Fuel 2: </b>  {{thruster.fuel_2}}<br />
+                        <br />
+                    </p>
+                </td>
+              </tr>
+            </table>
         </ion-card-content>
     </ion-card>
 
     <ion-card class="cardContent">
         <ion-card-content>
-          <b>Heat Shield</b>
-          <p>
-            <b>Material: </b> {{capsule.heat_shield.material}}  <br />
-            <b>Partner: </b> {{capsule.heat_shield.dev_partner}}  <br />
-          </p>
+            <h2><b>HEAT SHIELD</b></h2>
+          <div class = "drawLine"></div><br />
+          <table>
+              <tr>
+                <td>
+                    <img src="assets/imgs/heatshield.png">
+                </td>
+                <td class="tdSpace">
+                    <p>
+                        <b>Material: </b> {{capsule.heat_shield.material}}  <br />
+                        <b>Partner: </b> {{capsule.heat_shield.dev_partner}}  <br />
+                    </p>
+                </td>
+              </tr>
+            </table>
         </ion-card-content>
     </ion-card>
 
     <ion-card class="cardContent">
         <ion-card-content>
-          <b>Diameter</b>
-          <p>
-            <b>Meter: </b> {{capsule.diameter.meters}}  <br />
-            <b>Feet: </b> {{capsule.diameter.feet}} <br/>
-          </p>
+          <h2><b>DIAMETER</b></h2>
+          <div class = "drawLine"></div><br />
+          <table>
+              <tr>
+                <td>
+                    <img src="assets/imgs/diameter.png">
+                </td>
+                <td class="tdSpace">
+                    <p>
+                        <b>Meter: </b> {{capsule.diameter.meters}}  <br />
+                        <b>Feet: </b> {{capsule.diameter.feet}} <br/>
+                    </p>
+                </td>
+              </tr>
+            </table>
         </ion-card-content>
     </ion-card>
+
 
     <ion-card class="cardContent">
         <ion-card-content>

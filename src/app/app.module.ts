@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { GoogleMaps } from '@ionic-native/google-maps';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomepagePage } from '../pages/homepage/homepage';
 import { SearchPage } from '../pages/search/search';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SpaceXApiProvider } from '../providers/space-x-api/space-x-api';
-import { LaunchListPage } from '../pages/launch-list/launch-list';
 import { HttpClientModule } from '@angular/common/http';
 import { LaunchDetailPage } from '../pages/launch-detail/launch-detail';
 import { RocketDetailPage } from '../pages/rocket-detail/rocket-detail';
@@ -17,12 +16,15 @@ import { CapsuleDetailPage } from '../pages/capsule-detail/capsule-detail';
 import { EquipmentTabsPage } from '../pages/equipment-tabs/equipment-tabs';
 import { CoreDetailsPage } from '../pages/core-details/core-details';
 import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail';
+import { LaunchesPage } from '../pages/launches/launches';
+import { SearchPipe } from '../pipes/search/search';
+import { SortPipe } from '../pipes/sort/sort';
+import { GoogleMapPage } from '../pages/google-map/google-map';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomepagePage,
-    LaunchListPage,
+    LaunchesPage,
     SearchPage,
     EquipmentTabsPage,
     AboutTabsPage,
@@ -31,6 +33,7 @@ import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail'
     CapsuleDetailPage,
     LaunchpadDetailPage,
     CoreDetailsPage,
+    GoogleMapPage,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +45,7 @@ import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomepagePage,
-    LaunchListPage,
+    LaunchesPage,
     SearchPage,
     EquipmentTabsPage,
     AboutTabsPage,
@@ -52,13 +54,15 @@ import { LaunchpadDetailPage } from '../pages/launchpad-detail/launchpad-detail'
     CapsuleDetailPage,
     CoreDetailsPage,
     LaunchpadDetailPage,
+    GoogleMapPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SpaceXApiProvider,
-    InAppBrowser
+    InAppBrowser,
+    GoogleMaps
   ]
 })
 export class AppModule {}

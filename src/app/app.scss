@@ -27,11 +27,28 @@
     margin:10px auto;
 }
 
+.title-card {
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+}
+
+.subtitle-card {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.content-card {
+    color: #fff;
+    font-size: 17px;
+}
+
 .cardContent {
     border-radius: 10px 10px 10px 10px;
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
-    margin:10px auto;
+    margin-bottom: 10px auto;
 }
 
 .semi-transparent {
@@ -45,9 +62,47 @@
 }
 
 toolbar-background {
-    background-color: cyan
+    background-color: rgb(0, 255, 255)
 }
 
 h2, p {
     color: white;
+}
+
+.item-wp p {
+    color: white;
+}
+
+.item-md p {
+    color: rgb(197, 197, 197)
+}
+#filterbut {
+    display: inline-block;
+    border-radius: 60px;
+    width: 20%;
+    height: 20px;
+    font-size: 2vw;
+    
+}
+
+.drawLine{
+    border: 0.5px solid white;
+}
+
+ion-card {
+    width:100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+ion-card-header{
+    width:100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.tdSpace {
+    padding-left: 20px;
 }
