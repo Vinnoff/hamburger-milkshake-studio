@@ -33,8 +33,6 @@ import { GoogleMapPage } from '../pages/google-map/google-map';
     CapsuleDetailPage,
     LaunchpadDetailPage,
     CoreDetailsPage,
-    SearchPipe,
-    SortPipe,
     GoogleMapPage,
   ],
   imports: [

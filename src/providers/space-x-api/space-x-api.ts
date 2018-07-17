@@ -26,6 +26,10 @@ export class SpaceXApiProvider {
     return this.http.get<Launch[]>(this.baseUrl + "/launches/all")
   }
 
+  getPreviousLaunches() : Observable<Launch[]>{
+    return this.http.get<Launch[]>(this.baseUrl + "/launches")
+  }
+
   getNextLaunches() : Observable<Launch[]>{
     return this.http.get<Launch[]>(this.baseUrl + "/launches/upcoming")
   }
